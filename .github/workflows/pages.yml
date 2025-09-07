@@ -6,6 +6,11 @@ on:
   pull_request:
     branches: [ main ]
 
+permissions:
+  contents: write
+  pages: write
+  id-token: write
+
 jobs:
   build-and-deploy:
     runs-on: ubuntu-latest
@@ -13,6 +18,8 @@ jobs:
     steps:
     - name: Checkout
       uses: actions/checkout@v4
+      with:
+        fetch-depth: 0
       
     - name: Setup Node.js
       uses: actions/setup-node@v4
@@ -31,7 +38,26 @@ jobs:
       run: |
         git config user.name "github-actions[bot]"
         git config user.email "github-actions[bot]@users.noreply.github.com"
-        git add .
-        git commit -m "Deploy to GitHub Pages" || exit 0
-        git remote set-url origin https://David-glitc:${{ secrets.GH_PAGES_TOKEN }}@github.com/David-glitc/Algo_repo.git
+        
+        # Set up remote with proper token
+        git remote set-url origin https://x-access-token:${{ secrets.GH_PAGES_TOKEN }}@github.com/${{ github.repository }}
+        
+        # Create or checkout gh-pages branch
+        if ! git show-ref --verify --quiet refs/heads/gh-pages; then
+          echo "Creating new gh-pages branch"
+          git checkout --orphan gh-pages
+          git rm -rf . || true
+        else
+          echo "Checking out existing gh-pages branch"
+          git checkout gh-pages
+        fi
+        
+        # Only add files needed for GitHub Pages (exclude node_modules, benchmarks, etc.)
+        git add index.html *.html
+        git add -f package.json package-lock.json
+        git add -f tsconfig.json
+        git add -f README.md GETTING_STARTED.md BENCHMARK_GUIDE.md SUMMARY.md
+        
+        # Commit and push
+        git commit -m "Deploy to GitHub Pages - $(date)" || exit 0
         git push origin gh-pages
