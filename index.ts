@@ -52,6 +52,7 @@ function printTable(results: BenchmarkResult[], totalTime: number) {
   console.log('\n' + '='.repeat(140));
   console.log('ALGORITHM BENCHMARK RESULTS');
   console.log('='.repeat(140));
+  console.log("\n")
   
   // Table header with proper spacing
   console.log('│ Algorithm'.padEnd(45) + '│ Mean'.padEnd(15) + '│ Median'.padEnd(15) + '│ Min'.padEnd(15) + '│ Max'.padEnd(15) + '│ Iterations'.padEnd(12) + '│ Total Time'.padEnd(15) + '│');
@@ -79,8 +80,13 @@ function printTable(results: BenchmarkResult[], totalTime: number) {
 
 async function saveResultsToFile(results: BenchmarkResult[], totalTime: number, startTime: number) {
   const timestamp = new Date().toISOString().replace(/[:.]/g, '-');
-  const jsonFilename = `benchmark-results-${timestamp}.json`;
-  const csvFilename = `benchmark-results-${timestamp}.csv`;
+  const date = new Date().toISOString().split('T')[0]; // YYYY-MM-DD format
+  const runtime = typeof Bun !== 'undefined' ? 'bun' : typeof Deno !== 'undefined' ? 'deno' : 'node';
+  
+  // Create organized folder structure by runtime type
+  const benchmarkDir = `benchmarks/${runtime}`;
+  const jsonFilename = `${benchmarkDir}/results-${date}-${timestamp}.json`;
+  const csvFilename = `${benchmarkDir}/results-${date}-${timestamp}.csv`;
   
   const report = {
     timestamp: new Date().toISOString(),
@@ -103,23 +109,14 @@ async function saveResultsToFile(results: BenchmarkResult[], totalTime: number, 
   };
   
   try {
-    // Try different file writing approaches based on runtime
-    if (typeof Bun !== 'undefined') {
-      // Bun runtime - use writeFileSync for compatibility
-      const fs = require('fs');
-      fs.writeFileSync(jsonFilename, JSON.stringify(report, null, 2));
-      console.log(`\nJSON results saved to: ${jsonFilename}`);
-      
-      const csvHeader = 'Algorithm,Mean (ms),Median (ms),Min (ms),Max (ms),Iterations,Total Time (ms),Mean Formatted,Median Formatted,Min Formatted,Max Formatted,Total Time Formatted\n';
-      const csvRows = results.map(result => 
-        `"${result.name}",${result.mean.toFixed(3)},${result.median.toFixed(3)},${result.min.toFixed(3)},${result.max.toFixed(3)},${result.iterations},${result.totalTime.toFixed(3)},"${formatTime(result.mean)}","${formatTime(result.median)}","${formatTime(result.min)}","${formatTime(result.max)}","${formatTime(result.totalTime)}"`
-      ).join('\n');
-      
-      fs.writeFileSync(csvFilename, csvHeader + csvRows);
-      console.log(`CSV results saved to: ${csvFilename}`);
-      
+    // Create directory if it doesn't exist
+    let fs, path;
+    if (typeof require !== 'undefined') {
+      fs = require('fs');
+      path = require('path');
     } else if (typeof Deno !== 'undefined') {
-      // Deno runtime
+      // For Deno, we'll handle this differently
+      await Deno.mkdir(benchmarkDir, { recursive: true });
       await Deno.writeTextFile(jsonFilename, JSON.stringify(report, null, 2));
       console.log(`\nJSON results saved to: ${jsonFilename}`);
       
@@ -130,21 +127,38 @@ async function saveResultsToFile(results: BenchmarkResult[], totalTime: number, 
       
       await Deno.writeTextFile(csvFilename, csvHeader + csvRows);
       console.log(`CSV results saved to: ${csvFilename}`);
-      
+      return;
     } else {
-      // Node.js runtime
-      const fs = require('fs');
-      fs.writeFileSync(jsonFilename, JSON.stringify(report, null, 2));
-      console.log(`\nJSON results saved to: ${jsonFilename}`);
-      
-      const csvHeader = 'Algorithm,Mean (ms),Median (ms),Min (ms),Max (ms),Iterations,Total Time (ms),Mean Formatted,Median Formatted,Min Formatted,Max Formatted,Total Time Formatted\n';
-      const csvRows = results.map(result => 
-        `"${result.name}",${result.mean.toFixed(3)},${result.median.toFixed(3)},${result.min.toFixed(3)},${result.max.toFixed(3)},${result.iterations},${result.totalTime.toFixed(3)},"${formatTime(result.mean)}","${formatTime(result.median)}","${formatTime(result.min)}","${formatTime(result.max)}","${formatTime(result.totalTime)}"`
-      ).join('\n');
-      
-      fs.writeFileSync(csvFilename, csvHeader + csvRows);
-      console.log(`CSV results saved to: ${csvFilename}`);
+      // Try to import fs dynamically for ES modules
+      try {
+        const fsModule = await import('fs');
+        const pathModule = await import('path');
+        fs = fsModule.default || fsModule;
+        path = pathModule.default || pathModule;
+      } catch (importError) {
+        throw new Error('No file system access available');
+      }
     }
+    
+    // Ensure benchmark directory exists
+    if (!fs.existsSync('benchmarks')) {
+      fs.mkdirSync('benchmarks');
+    }
+    if (!fs.existsSync(benchmarkDir)) {
+      fs.mkdirSync(benchmarkDir, { recursive: true });
+    }
+    
+    // Write files
+    fs.writeFileSync(jsonFilename, JSON.stringify(report, null, 2));
+    console.log(`\nJSON results saved to: ${jsonFilename}`);
+    
+    const csvHeader = 'Algorithm,Mean (ms),Median (ms),Min (ms),Max (ms),Iterations,Total Time (ms),Mean Formatted,Median Formatted,Min Formatted,Max Formatted,Total Time Formatted\n';
+    const csvRows = results.map(result => 
+      `"${result.name}",${result.mean.toFixed(3)},${result.median.toFixed(3)},${result.min.toFixed(3)},${result.max.toFixed(3)},${result.iterations},${result.totalTime.toFixed(3)},"${formatTime(result.mean)}","${formatTime(result.median)}","${formatTime(result.min)}","${formatTime(result.max)}","${formatTime(result.totalTime)}"`
+    ).join('\n');
+    
+    fs.writeFileSync(csvFilename, csvHeader + csvRows);
+    console.log(`CSV results saved to: ${csvFilename}`);
     
   } catch (error) {
     console.log(`\n⚠️  Could not save results to file: ${error}`);

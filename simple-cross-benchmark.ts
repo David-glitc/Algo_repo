@@ -213,10 +213,17 @@ function parseBenchmarkOutput(output: string): BenchmarkResult[] {
 
 async function saveComparisonReport(runtimes: RuntimeResult[], totalTime: number) {
   const timestamp = new Date().toISOString().replace(/[:.]/g, '-');
-  const jsonFilename = `bun-vs-deno-benchmark-${timestamp}.json`;
-  const csvFilename = `bun-vs-deno-benchmark-${timestamp}.csv`;
+  const date = new Date().toISOString().split('T')[0]; // YYYY-MM-DD format
+  
+  // Create organized folder structure for simple comparisons
+  const benchmarkDir = `benchmarks/simple-comparison`;
+  const jsonFilename = `${benchmarkDir}/bun-vs-deno-${date}-${timestamp}.json`;
+  const csvFilename = `${benchmarkDir}/bun-vs-deno-${date}-${timestamp}.csv`;
   
   try {
+    // Ensure benchmark directory exists
+    await fs.mkdir(benchmarkDir, { recursive: true });
+    
     // Save JSON report
     const report = {
       timestamp: new Date().toISOString(),

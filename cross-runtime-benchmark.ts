@@ -288,10 +288,17 @@ function calculateComparison(runtimes: RuntimeResult[]): CrossRuntimeReport['com
 
 async function saveCrossRuntimeReport(report: CrossRuntimeReport) {
   const timestamp = new Date().toISOString().replace(/[:.]/g, '-');
-  const jsonFilename = `cross-runtime-benchmark-${timestamp}.json`;
-  const csvFilename = `cross-runtime-benchmark-${timestamp}.csv`;
+  const date = new Date().toISOString().split('T')[0]; // YYYY-MM-DD format
+  
+  // Create organized folder structure for cross-runtime comparisons
+  const benchmarkDir = `benchmarks/cross-runtime`;
+  const jsonFilename = `${benchmarkDir}/comparison-${date}-${timestamp}.json`;
+  const csvFilename = `${benchmarkDir}/comparison-${date}-${timestamp}.csv`;
   
   try {
+    // Ensure benchmark directory exists
+    await fs.mkdir(benchmarkDir, { recursive: true });
+    
     // Save JSON report
     await fs.writeFile(jsonFilename, JSON.stringify(report, null, 2));
     console.log(`\n💾 Cross-runtime JSON report saved to: ${jsonFilename}`);
