@@ -156,6 +156,40 @@
         .github-link:hover {
             background: #1a1e22;
         }
+        
+        .contact-info {
+            margin: 1.5rem 0;
+            text-align: center;
+        }
+        
+        .contact-info p {
+            margin-bottom: 1rem;
+            color: #4a5568;
+        }
+        
+        .contact-links {
+            display: flex;
+            justify-content: center;
+            gap: 1rem;
+            flex-wrap: wrap;
+        }
+        
+        .contact-link {
+            display: inline-block;
+            background: #667eea;
+            color: white;
+            padding: 0.6rem 1.2rem;
+            text-decoration: none;
+            border-radius: 6px;
+            transition: all 0.2s;
+            font-size: 0.9rem;
+        }
+        
+        .contact-link:hover {
+            background: #5a67d8;
+            transform: translateY(-1px);
+            box-shadow: 0 4px 12px rgba(102, 126, 234, 0.3);
+        }
     </style>
 </head>
 
@@ -264,7 +298,14 @@
 
         <div class="footer">
             <p>Perfect for students, developers, and algorithm enthusiasts</p>
-            <a href="https://github.com/your-username/algorithms-study-repo" class="github-link">View on GitHub</a>
+            <div class="contact-info">
+                <p><strong>Created by David Pere</strong></p>
+                <div class="contact-links">
+                    <a href="https://x.com/davidpereIsHIM" class="contact-link" target="_blank" rel="noopener noreferrer">🐦 X (Twitter)</a>
+                    <a href="https://github.com/David-glitc" class="contact-link" target="_blank" rel="noopener noreferrer">💻 GitHub</a>
+                </div>
+            </div>
+            <a href="https://github.com/David-glitc/Algo_repo" class="github-link">View on GitHub</a>
         </div>
     </div>
 </body>
