@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Getting Started Guide</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background: #f8f9fa;
+        }
+        
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 2rem;
+            background: white;
+            min-height: 100vh;
+            box-shadow: 0 0 20px rgba(0,0,0,0.1);
+        }
+        
+        .header {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 2rem;
+            margin: -2rem -2rem 2rem -2rem;
+            border-radius: 0 0 15px 15px;
+        }
+        
+        .header h1 {
+            font-size: 2.5rem;
+            margin-bottom: 0.5rem;
+        }
+        
+        .header p {
+            opacity: 0.9;
+            font-size: 1.1rem;
+        }
+        
+        .back-link {
+            display: inline-block;
+            background: #667eea;
+            color: white;
+            padding: 0.5rem 1rem;
+            text-decoration: none;
+            border-radius: 5px;
+            margin-bottom: 2rem;
+            transition: background 0.2s;
+        }
+        
+        .back-link:hover {
+            background: #5a67d8;
+        }
+        
+        h1, h2, h3 {
+            color: #2d3748;
+            margin: 2rem 0 1rem 0;
+        }
+        
+        h1 {
+            font-size: 2.2rem;
+            border-bottom: 3px solid #667eea;
+            padding-bottom: 0.5rem;
+        }
+        
+        h2 {
+            font-size: 1.8rem;
+            border-bottom: 2px solid #e2e8f0;
+            padding-bottom: 0.3rem;
+        }
+        
+        h3 {
+            font-size: 1.4rem;
+            color: #4a5568;
+        }
+        
+        p {
+            margin-bottom: 1rem;
+            color: #4a5568;
+        }
+        
+        code {
+            background: #f1f5f9;
+            padding: 0.2rem 0.4rem;
+            border-radius: 3px;
+            font-family: 'Monaco', 'Menlo', 'Ubuntu Mono', monospace;
+            font-size: 0.9rem;
+            color: #e53e3e;
+        }
+        
+        pre {
+            background: #2d3748;
+            color: #e2e8f0;
+            padding: 1rem;
+            border-radius: 8px;
+            overflow-x: auto;
+            margin: 1rem 0;
+        }
+        
+        pre code {
+            background: none;
+            color: inherit;
+            padding: 0;
+        }
+        
+        ul, ol {
+            margin: 1rem 0 1rem 2rem;
+        }
+        
+        li {
+            margin-bottom: 0.5rem;
+            color: #4a5568;
+        }
+        
+        a {
+            color: #667eea;
+            text-decoration: none;
+        }
+        
+        a:hover {
+            text-decoration: underline;
+        }
+        
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 1rem 0;
+        }
+        
+        th, td {
+            border: 1px solid #e2e8f0;
+            padding: 0.75rem;
+            text-align: left;
+        }
+        
+        th {
+            background: #f8f9fa;
+            font-weight: 600;
+            color: #2d3748;
+        }
+        
+        .footer {
+            margin-top: 3rem;
+            padding-top: 2rem;
+            border-top: 1px solid #e2e8f0;
+            text-align: center;
+            color: #4a5568;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>Getting Started Guide</h1>
+            <p>Algorithm Study Repository Documentation</p>
+        </div>
+        
+        <a href="index.html" class="back-link">← Back to Home</a>
+        
+        <div class="content">
+            <h1>Getting Started with Algorithms Study Repository</h1><p><br>Welcome to the Algorithms Study Repository! This guide will help you get started with studying and using the algorithms in this collection.</p><p><br><h2>🚀 Quick Start</h2></p><p><br><h3>Prerequisites</h3></p><p><br><ul><li>Node.js 18+ or Bun or Deno</li></ul></p><p><br><ul><li>Basic understanding of TypeScript/JavaScript</li></ul></p><p><br><h3>Installation</h3></p><p><br><pre><code>bash</p><p><br><h1>Clone the repository</h1></p><p><br>git clone <your-repo-url></p><p><br>cd algorithms-study-repo</p><p><br><h1>Install dependencies (if using Node.js)</h1></p><p><br>npm install</p><p><br></code></pre></p><p><br><h3>Running Examples</h3></p><p><br><pre><code>bash</p><p><br><h1>Run the test suite to verify everything works</h1></p><p><br>bun run test.ts</p><p><br><h1>or</h1></p><p><br>deno run test.ts</p><p><br><h1>or</h1></p><p><br>node --loader ts-node/esm test.ts</p><p><br><h1>Run practical examples</h1></p><p><br>bun run examples.ts</p><p><br><h1>or</h1></p><p><br>deno run examples.ts</p><p><br><h1>or</h1></p><p><br>node --loader ts-node/esm examples.ts</p><p><br><h1>Run performance benchmarks</h1></p><p><br>bun run benchmark</p><p><br><h1>or</h1></p><p><br>deno run benchmark.ts</p><p><br><h1>or</h1></p><p><br>node --loader ts-node/esm index.ts</p><p><br></code></pre></p><p><br><h2>📚 How to Study with This Repository</h2></p><p><br><h3>1. Start with the Basics</h3></p><p><br>Begin with fundamental algorithms:</p><p><br><ul><li><strong>Binary Search</strong> (<code>src/binarySearch.ts</code>) - Learn divide and conquer</li></ul></p><p><br><ul><li><strong>Quick Sort</strong> (<code>src/quickSort.ts</code>) - Understand sorting algorithms</li></ul></p><p><br><ul><li><strong>DFS/BFS</strong> (<code>src/dfs.ts</code>, <code>src/bfs.ts</code>) - Master graph traversal</li></ul></p><p><br><h3>2. Read the Code</h3></p><p><br>Each algorithm file contains:</p><p><br><ul><li>Clear implementation with comments</li></ul></p><p><br><ul><li>Time and space complexity information</li></ul></p><p><br><ul><li>TypeScript types for better understanding</li></ul></p><p><br><h3>3. Run the Examples</h3></p><p><br>The <code>examples.ts</code> file shows real-world applications:</p><p><br><ul><li>Binary search for phone directory lookup</li></ul></p><p><br><ul><li>Graph algorithms for social networks</li></ul></p><p><br><ul><li>Pathfinding for game AI</li></ul></p><p><br><ul><li>And much more!</li></ul></p><p><br><h3>4. Experiment</h3></p><p><br>Modify the examples to:</p><p><br><ul><li>Change input data</li></ul></p><p><br><ul><li>Add new test cases</li></ul></p><p><br><ul><li>Implement variations of algorithms</li></ul></p><p><br><h3>5. Benchmark Performance</h3></p><p><br>Use the built-in benchmark suite to understand:</p><p><br><ul><li>How algorithms perform with different input sizes</li></ul></p><p><br><ul><li>Time complexity in practice</li></ul></p><p><br><ul><li>Memory usage patterns</li></ul></p><p><br><h2>🎯 Learning Path</h2></p><p><br><h3>Beginner Level</h3></p><p><br><ul><li><strong>Searching & Sorting</strong></li></ul></p><p><br>   - Binary Search</p><p><br>   - Quick Sort</p><p><br>   - Merge Sort</p><p><br><ul><li><strong>Basic Graph Algorithms</strong></li></ul></p><p><br>   - Depth-First Search (DFS)</p><p><br>   - Breadth-First Search (BFS)</p><p><br><ul><li><strong>Mathematical Algorithms</strong></li></ul></p><p><br>   - Greatest Common Divisor (GCD)</p><p><br>   - Binary Exponentiation</p><p><br><h3>Intermediate Level</h3></p><p><br><ul><li><strong>Advanced Graph Algorithms</strong></li></ul></p><p><br>   - Dijkstra's Shortest Path</p><p><br>   - A* Pathfinding</p><p><br>   - Topological Sort</p><p><br>   - Minimum Spanning Tree (Kruskal)</p><p><br><ul><li><strong>String Algorithms</strong></li></ul></p><p><br>   - KMP String Search</p><p><br>   - Longest Common Subsequence (LCS)</p><p><br><ul><li><strong>Dynamic Programming</strong></li></ul></p><p><br>   - 0/1 Knapsack Problem</p><p><br><h3>Advanced Level</h3></p><p><br><ul><li><strong>Complex Algorithms</strong></li></ul></p><p><br>   - Fast Fourier Transform (FFT)</p><p><br>   - Lowest Common Ancestor (LCA)</p><p><br><ul><li><strong>Optimization</strong></li></ul></p><p><br>   - Study the benchmark results</p><p><br>   - Implement your own optimizations</p><p><br>   - Compare different approaches</p><p><br><h2>🛠️ Development Workflow</h2></p><p><br><h3>Making Changes</h3></p><p><br><ul><li><strong>Edit Algorithm Files</strong>: Modify implementations in <code>src/</code> directory</li></ul></p><p><br><ul><li><strong>Add Tests</strong>: Update <code>test.ts</code> with new test cases</li></ul></p><p><br><ul><li><strong>Update Examples</strong>: Add new examples to <code>examples.ts</code></li></ul></p><p><br><ul><li><strong>Run Tests</strong>: Verify your changes work correctly</li></ul></p><p><br><h3>Adding New Algorithms</h3></p><p><br><ul><li>Create a new file in <code>src/</code> directory</li></ul></p><p><br><ul><li>Implement the algorithm with proper TypeScript types</li></ul></p><p><br><ul><li>Add exports to <code>src/index.ts</code></li></ul></p><p><br><ul><li>Add test cases to <code>test.ts</code></li></ul></p><p><br><ul><li>Add examples to <code>examples.ts</code></li></ul></p><p><br><ul><li>Update benchmarks in <code>index.ts</code></li></ul></p><p><br><h2>📊 Understanding Benchmarks</h2></p><p><br>The benchmark suite measures:</p><p><br><ul><li><strong>Mean Time</strong>: Average execution time</li></ul></p><p><br><ul><li><strong>Median Time</strong>: Middle execution time</li></ul></p><p><br><ul><li><strong>Iterations</strong>: Number of test runs</li></ul></p><p><br>Example output:</p><p><br><pre><code></p><p><br>BinarySearch x1000: mean=2.45ms median=2.30ms (n=5)</p><p><br>QuickSort (100k): mean=45.67ms median=44.20ms (n=3)</p><p><br></code></pre></p><p><br><h2>🔧 Troubleshooting</h2></p><p><br><h3>Common Issues</h3></p><p><br><strong>TypeScript Errors</strong></p><p><br><pre><code>bash</p><p><br><h1>Run type checking</h1></p><p><br>npm run type-check</p><p><br></code></pre></p><p><br><strong>Import Errors</strong></p><p><br><ul><li>Make sure you're using ES modules (<code>"type": "module"</code> in package.json)</li></ul></p><p><br><ul><li>Use <code>.js</code> extensions in imports if needed</li></ul></p><p><br><strong>Performance Issues</strong></p><p><br><ul><li>Start with smaller input sizes</li></ul></p><p><br><ul><li>Use the benchmark suite to measure performance</li></ul></p><p><br><ul><li>Consider algorithm complexity</li></ul></p><p><br><h3>Getting Help</h3></p><p><br><ul><li>Check the README.md for detailed algorithm explanations</li></ul></p><p><br><ul><li>Look at the examples in <code>examples.ts</code></li></ul></p><p><br><ul><li>Run the test suite to verify implementations</li></ul></p><p><br><ul><li>Study the benchmark results</li></ul></p><p><br><h2>🎓 Study Tips</h2></p><p><br><h3>1. Understand Before Implementing</h3></p><p><br><ul><li>Read the algorithm description</li></ul></p><p><br><ul><li>Trace through examples by hand</li></ul></p><p><br><ul><li>Understand the time/space complexity</li></ul></p><p><br><h3>2. Practice Regularly</h3></p><p><br><ul><li>Implement algorithms from scratch</li></ul></p><p><br><ul><li>Solve related problems</li></ul></p><p><br><ul><li>Compare different approaches</li></ul></p><p><br><h3>3. Use the Benchmark Suite</h3></p><p><br><ul><li>Measure performance with different input sizes</li></ul></p><p><br><ul><li>Understand how complexity affects real performance</li></ul></p><p><br><ul><li>Optimize based on actual measurements</li></ul></p><p><br><h3>4. Build Projects</h3></p><p><br><ul><li>Use these algorithms in real projects</li></ul></p><p><br><ul><li>Combine multiple algorithms</li></ul></p><p><br><ul><li>Solve competitive programming problems</li></ul></p><p><br><h2>📖 Additional Resources</h2></p><p><br><ul><li><strong>Books</strong>: "Introduction to Algorithms" by Cormen et al.</li></ul></p><p><br><ul><li><strong>Online</strong>: LeetCode, HackerRank, Codeforces</li></ul></p><p><br><ul><li><strong>Videos</strong>: MIT 6.006 Introduction to Algorithms</li></ul></p><p><br><ul><li><strong>Practice</strong>: Try implementing these algorithms in different languages</li></ul></p><p><br><h2>🤝 Contributing</h2></p><p><br>Found a bug or want to add an algorithm?</p><p><br><ul><li>Fork the repository</li></ul></p><p><br><ul><li>Create a feature branch</li></ul></p><p><br><ul><li>Make your changes</li></ul></p><p><br><ul><li>Add tests and examples</li></ul></p><p><br><ul><li>Submit a pull request</li></ul></p><p><br>---</p><p><br><strong>Happy Learning! 🎉</strong></p><p><br>Remember: The goal is not just to memorize algorithms, but to understand the underlying principles and be able to apply them to solve real problems.</p>
+        </div>
+        
+        <div class="footer">
+            <p>Algorithm Study Repository - Comprehensive Algorithm Learning Resource</p>
+        </div>
+    </div>
+</body>
+</html>

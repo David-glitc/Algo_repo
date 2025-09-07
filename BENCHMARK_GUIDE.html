@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Benchmark Guide</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background: #f8f9fa;
+        }
+        
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 2rem;
+            background: white;
+            min-height: 100vh;
+            box-shadow: 0 0 20px rgba(0,0,0,0.1);
+        }
+        
+        .header {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 2rem;
+            margin: -2rem -2rem 2rem -2rem;
+            border-radius: 0 0 15px 15px;
+        }
+        
+        .header h1 {
+            font-size: 2.5rem;
+            margin-bottom: 0.5rem;
+        }
+        
+        .header p {
+            opacity: 0.9;
+            font-size: 1.1rem;
+        }
+        
+        .back-link {
+            display: inline-block;
+            background: #667eea;
+            color: white;
+            padding: 0.5rem 1rem;
+            text-decoration: none;
+            border-radius: 5px;
+            margin-bottom: 2rem;
+            transition: background 0.2s;
+        }
+        
+        .back-link:hover {
+            background: #5a67d8;
+        }
+        
+        h1, h2, h3 {
+            color: #2d3748;
+            margin: 2rem 0 1rem 0;
+        }
+        
+        h1 {
+            font-size: 2.2rem;
+            border-bottom: 3px solid #667eea;
+            padding-bottom: 0.5rem;
+        }
+        
+        h2 {
+            font-size: 1.8rem;
+            border-bottom: 2px solid #e2e8f0;
+            padding-bottom: 0.3rem;
+        }
+        
+        h3 {
+            font-size: 1.4rem;
+            color: #4a5568;
+        }
+        
+        p {
+            margin-bottom: 1rem;
+            color: #4a5568;
+        }
+        
+        code {
+            background: #f1f5f9;
+            padding: 0.2rem 0.4rem;
+            border-radius: 3px;
+            font-family: 'Monaco', 'Menlo', 'Ubuntu Mono', monospace;
+            font-size: 0.9rem;
+            color: #e53e3e;
+        }
+        
+        pre {
+            background: #2d3748;
+            color: #e2e8f0;
+            padding: 1rem;
+            border-radius: 8px;
+            overflow-x: auto;
+            margin: 1rem 0;
+        }
+        
+        pre code {
+            background: none;
+            color: inherit;
+            padding: 0;
+        }
+        
+        ul, ol {
+            margin: 1rem 0 1rem 2rem;
+        }
+        
+        li {
+            margin-bottom: 0.5rem;
+            color: #4a5568;
+        }
+        
+        a {
+            color: #667eea;
+            text-decoration: none;
+        }
+        
+        a:hover {
+            text-decoration: underline;
+        }
+        
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 1rem 0;
+        }
+        
+        th, td {
+            border: 1px solid #e2e8f0;
+            padding: 0.75rem;
+            text-align: left;
+        }
+        
+        th {
+            background: #f8f9fa;
+            font-weight: 600;
+            color: #2d3748;
+        }
+        
+        .footer {
+            margin-top: 3rem;
+            padding-top: 2rem;
+            border-top: 1px solid #e2e8f0;
+            text-align: center;
+            color: #4a5568;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>Benchmark Guide</h1>
+            <p>Algorithm Study Repository Documentation</p>
+        </div>
+        
+        <a href="index.html" class="back-link">← Back to Home</a>
+        
+        <div class="content">
+            <h1>🚀 Algorithm Benchmark Guide</h1><p><br>This guide explains how to use the comprehensive benchmarking system in this algorithm repository.</p><p><br><h2>📊 Available Benchmark Commands</h2></p><p><br><h3>1. <strong>Single Runtime Benchmarks</strong></h3></p><p><br><pre><code>bash</p><p><br><h1>Run benchmarks on Bun (default)</h1></p><p><br>bun run benchmark</p><p><br><h1>Run benchmarks on Deno</h1></p><p><br>bun run benchmark:deno</p><p><br><h1>Run benchmarks on Node.js</h1></p><p><br>bun run benchmark:node</p><p><br><h1>Run with enhanced output and file generation</h1></p><p><br>bun run benchmark:full</p><p><br></code></pre></p><p><br><h3>2. <strong>Cross-Runtime Comparison</strong></h3></p><p><br><pre><code>bash</p><p><br><h1>Compare Bun vs Deno performance</h1></p><p><br>bun run benchmark:compare</p><p><br><h1>Full cross-runtime comparison (Node.js, Bun, Deno)</h1></p><p><br>bun run benchmark:cross</p><p><br></code></pre></p><p><br><h2>🎯 What Each Benchmark Does</h2></p><p><br><h3><strong>Single Runtime Benchmark</strong></h3></p><p><br><ul><li>Runs 16 different algorithms with various input sizes</li></ul></p><p><br><ul><li>Measures execution time, memory usage, and performance statistics</li></ul></p><p><br><ul><li>Generates beautiful formatted tables with progress indicators</li></ul></p><p><br><ul><li>Saves results to JSON and CSV files with timestamps</li></ul></p><p><br><h3><strong>Cross-Runtime Comparison</strong></h3></p><p><br><ul><li>Runs the same benchmarks across multiple JavaScript runtimes</li></ul></p><p><br><ul><li>Compares performance between Bun, Deno, and Node.js</li></ul></p><p><br><ul><li>Shows which runtime is fastest for each algorithm</li></ul></p><p><br><ul><li>Calculates speedup ratios and performance differences</li></ul></p><p><br><ul><li>Generates comprehensive comparison reports</li></ul></p><p><br><h2>📈 Understanding the Results</h2></p><p><br><h3><strong>Performance Metrics</strong></h3></p><p><br><ul><li><strong>Mean</strong>: Average execution time across all iterations</li></ul></p><p><br><ul><li><strong>Median</strong>: Middle execution time (less affected by outliers)</li></ul></p><p><br><ul><li><strong>Min/Max</strong>: Fastest and slowest execution times</li></ul></p><p><br><ul><li><strong>Total Time</strong>: Sum of all iterations for that algorithm</li></ul></p><p><br><ul><li><strong>Speedup</strong>: How much faster one runtime is compared to another</li></ul></p><p><br><h3><strong>Time Formatting</strong></h3></p><p><br><ul><li><strong>μs</strong>: Microseconds (for very fast operations)</li></ul></p><p><br><ul><li><strong>ms</strong>: Milliseconds (most common)</li></ul></p><p><br><ul><li><strong>s</strong>: Seconds (for slower operations)</li></ul></p><p><br><h3><strong>Sample Output</strong></h3></p><p><br><pre><code></p><p><br>🚀 CROSS-RUNTIME ALGORITHM BENCHMARK COMPARISON</p><p><br>========================================================================================================================</p><p><br>│ Algorithm                        │ Bun          │ Deno         │ Fastest      │ Speedup      │</p><p><br>├─────────────────────────────────┼─────────────┼─────────────┼─────────────┼─────────────┤</p><p><br>│ BinarySearch x1000               │ 2.35ms       │ 2.89ms       │ Bun          │ 1.23x        │</p><p><br>│ QuickSort (100k)                 │ 87.69ms      │ 96.79ms      │ Bun          │ 1.10x        │</p><p><br>│ MergeSort (100k)                 │ 283.49ms     │ 193.59ms     │ Deno         │ 1.46x        │</p><p><br>└─────────────────────────────────┴─────────────┴─────────────┴─────────────┴─────────────┘</p><p><br>📊 RUNTIME PERFORMANCE SUMMARY:</p><p><br>   Bun: 24.01s (1.95x)</p><p><br>   Deno: 12.29s (1.00x)</p><p><br>   Overall fastest: Deno</p><p><br></code></pre></p><p><br><h2>📁 Generated Files</h2></p><p><br><h3><strong>Single Runtime Files</strong></h3></p><p><br><ul><li><code>benchmark-results-YYYY-MM-DDTHH-MM-SS-sssZ.json</code> - Complete benchmark data</li></ul></p><p><br><ul><li><code>benchmark-results-YYYY-MM-DDTHH-MM-SS-sssZ.csv</code> - Spreadsheet-compatible data</li></ul></p><p><br><h3><strong>Cross-Runtime Files</strong></h3></p><p><br><ul><li><code>bun-vs-deno-benchmark-YYYY-MM-DDTHH-MM-SS-sssZ.json</code> - Comparison data</li></ul></p><p><br><ul><li><code>bun-vs-deno-benchmark-YYYY-MM-DDTHH-MM-SS-sssZ.csv</code> - Comparison spreadsheet</li></ul></p><p><br><h2>🔧 Algorithm Benchmarks Included</h2></p><p><br>| Algorithm | Input Size | Purpose |</p><p><br>|-----------|------------|---------|</p><p><br>| <strong>Binary Search</strong> | 1,000 iterations | Search performance |</p><p><br>| <strong>KMP String Search</strong> | 100k text, 1k pattern | String matching |</p><p><br>| <strong>Quick Sort</strong> | 100k elements | Sorting performance |</p><p><br>| <strong>Merge Sort</strong> | 100k elements | Stable sorting |</p><p><br>| <strong>FFT Convolution</strong> | 2^14 elements | Mathematical operations |</p><p><br>| <strong>DFS</strong> | 50k edges graph | Graph traversal |</p><p><br>| <strong>BFS</strong> | 50k edges graph | Breadth-first search |</p><p><br>| <strong>Topological Sort</strong> | 10k edges DAG | Graph ordering |</p><p><br>| <strong>LCA</strong> | 2000 depth tree | Tree algorithms |</p><p><br>| <strong>A* Search</strong> | 200x200 grid | Pathfinding |</p><p><br>| <strong>Dijkstra</strong> | 5k nodes, 20k edges | Shortest path |</p><p><br>| <strong>Kruskal MST</strong> | 50k edges | Minimum spanning tree |</p><p><br>| <strong>Binary Exponentiation</strong> | 10^4 exponent | Mathematical operations |</p><p><br>| <strong>Knapsack</strong> | 200 items, 5k capacity | Dynamic programming |</p><p><br>| <strong>LCS</strong> | 500x500 strings | String algorithms |</p><p><br>| <strong>GCD</strong> | 1M random pairs | Mathematical operations |</p><p><br><h2>🎯 Performance Insights</h2></p><p><br><h3><strong>Runtime Characteristics</strong></h3></p><p><br><strong>Bun</strong> 🚀</p><p><br><ul><li>Excellent for: String operations, graph algorithms, mathematical computations</li></ul></p><p><br><ul><li>Strengths: Fast startup, efficient memory usage</li></ul></p><p><br><ul><li>Best for: Development and testing</li></ul></p><p><br><strong>Deno</strong> 🦕</p><p><br><ul><li>Excellent for: Sorting algorithms, pathfinding, dynamic programming</li></ul></p><p><br><ul><li>Strengths: Consistent performance, good for production</li></ul></p><p><br><ul><li>Best for: Production deployments</li></ul></p><p><br><strong>Node.js</strong> 📦</p><p><br><ul><li>Good for: General-purpose applications</li></ul></p><p><br><ul><li>Strengths: Mature ecosystem, extensive libraries</li></ul></p><p><br><ul><li>Best for: Enterprise applications</li></ul></p><p><br><h3><strong>Algorithm Performance Patterns</strong></h3></p><p><br><ul><li><strong>Sorting</strong>: Deno often outperforms Bun for merge sort</li></ul></p><p><br><ul><li><strong>Graph Algorithms</strong>: Bun typically faster for DFS/BFS</li></ul></p><p><br><ul><li><strong>String Operations</strong>: Bun usually faster for KMP and string processing</li></ul></p><p><br><ul><li><strong>Mathematical</strong>: Performance varies by algorithm complexity</li></ul></p><p><br><ul><li><strong>Pathfinding</strong>: Deno often faster for A* and Dijkstra</li></ul></p><p><br><h2>🛠️ Customizing Benchmarks</h2></p><p><br><h3><strong>Modifying Input Sizes</strong></h3></p><p><br>Edit <code>index.ts</code> to change benchmark parameters:</p><p><br><pre><code>typescript</p><p><br>const N = 200000; // Change array size</p><p><br>const iterations = 5; // Change number of iterations</p><p><br></code></pre></p><p><br><h3><strong>Adding New Algorithms</strong></h3></p><p><br><ul><li>Add your algorithm to the <code>src/</code> directory</li></ul></p><p><br><ul><li>Export it from <code>src/index.ts</code></li></ul></p><p><br><ul><li>Add a benchmark test in <code>index.ts</code></li></ul></p><p><br><ul><li>Update the cross-runtime parser if needed</li></ul></p><p><br><h3><strong>Custom Runtime Comparison</strong></h3></p><p><br>Modify <code>simple-cross-benchmark.ts</code> to:</p><p><br><ul><li>Add more runtimes</li></ul></p><p><br><ul><li>Change comparison metrics</li></ul></p><p><br><ul><li>Customize output format</li></ul></p><p><br><h2>📊 Using Results for Analysis</h2></p><p><br><h3><strong>CSV Data Analysis</strong></h3></p><p><br>Import CSV files into Excel, Google Sheets, or Python for:</p><p><br><ul><li>Performance trend analysis</li></ul></p><p><br><ul><li>Statistical analysis</li></ul></p><p><br><ul><li>Visualization creation</li></ul></p><p><br><ul><li>Regression testing</li></ul></p><p><br><h3><strong>JSON Data Analysis</strong></h3></p><p><br>Use JSON files for:</p><p><br><ul><li>Programmatic analysis</li></ul></p><p><br><ul><li>Integration with monitoring systems</li></ul></p><p><br><ul><li>Automated performance regression detection</li></ul></p><p><br><ul><li>CI/CD pipeline integration</li></ul></p><p><br><h2>🚨 Troubleshooting</h2></p><p><br><h3><strong>Common Issues</strong></h3></p><p><br><strong>Runtime Not Found</strong></p><p><br><pre><code>bash</p><p><br><h1>Install missing runtimes</h1></p><p><br>npm install -g bun</p><p><br>curl -fsSL https://deno.land/install.sh | sh</p><p><br></code></pre></p><p><br><strong>Permission Errors (Deno)</strong></p><p><br><pre><code>bash</p><p><br><h1>Grant necessary permissions</h1></p><p><br>deno run --allow-read --allow-write index.ts</p><p><br></code></pre></p><p><br><strong>Memory Issues</strong></p><p><br><ul><li>Reduce input sizes in benchmark configuration</li></ul></p><p><br><ul><li>Increase system memory</li></ul></p><p><br><ul><li>Use smaller iteration counts</li></ul></p><p><br><h3><strong>Performance Tips</strong></h3></p><p><br><ul><li><strong>Warmup</strong>: Benchmarks include warmup runs to ensure consistent results</li></ul></p><p><br><ul><li><strong>Multiple Iterations</strong>: Each algorithm runs multiple times for statistical accuracy</li></ul></p><p><br><ul><li><strong>System Load</strong>: Run benchmarks on idle systems for consistent results</li></ul></p><p><br><ul><li><strong>Background Processes</strong>: Close unnecessary applications during benchmarking</li></ul></p><p><br><h2>🎉 Best Practices</h2></p><p><br><h3><strong>For Development</strong></h3></p><p><br><ul><li>Run <code>bun run benchmark:compare</code> regularly to track performance</li></ul></p><p><br><ul><li>Use results to optimize slow algorithms</li></ul></p><p><br><ul><li>Compare before/after performance when making changes</li></ul></p><p><br><h3><strong>For Production</strong></h3></p><p><br><ul><li>Run full cross-runtime benchmarks before deployment</li></ul></p><p><br><ul><li>Monitor performance regressions</li></ul></p><p><br><ul><li>Use results to choose optimal runtime for your use case</li></ul></p><p><br><h3><strong>For Research</strong></h3></p><p><br><ul><li>Export data for statistical analysis</li></ul></p><p><br><ul><li>Compare with other algorithm implementations</li></ul></p><p><br><ul><li>Document performance characteristics</li></ul></p><p><br>---</p><p><br><strong>Happy Benchmarking! 🚀</strong></p><p><br>Use these tools to understand algorithm performance, optimize your code, and make informed decisions about runtime choices for your projects.</p>
+        </div>
+        
+        <div class="footer">
+            <p>Algorithm Study Repository - Comprehensive Algorithm Learning Resource</p>
+        </div>
+    </div>
+</body>
+</html>

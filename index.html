@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Algorithm Study Repository</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 2rem;
+        }
+        
+        .header {
+            text-align: center;
+            color: white;
+            margin-bottom: 3rem;
+        }
+        
+        .header h1 {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+        }
+        
+        .header p {
+            font-size: 1.2rem;
+            opacity: 0.9;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+        
+        .content {
+            background: white;
+            border-radius: 15px;
+            padding: 2rem;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+        }
+        
+        .section {
+            margin-bottom: 2.5rem;
+        }
+        
+        .section h2 {
+            color: #4a5568;
+            margin-bottom: 1rem;
+            font-size: 1.8rem;
+            border-bottom: 3px solid #667eea;
+            padding-bottom: 0.5rem;
+        }
+        
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 1.5rem;
+            margin-top: 1.5rem;
+        }
+        
+        .card {
+            background: #f8f9fa;
+            border-radius: 10px;
+            padding: 1.5rem;
+            border-left: 4px solid #667eea;
+            transition: transform 0.2s, box-shadow 0.2s;
+        }
+        
+        .card:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+        }
+        
+        .card h3 {
+            color: #2d3748;
+            margin-bottom: 0.5rem;
+            font-size: 1.3rem;
+        }
+        
+        .card p {
+            color: #4a5568;
+            margin-bottom: 1rem;
+        }
+        
+        .card a {
+            display: inline-block;
+            background: #667eea;
+            color: white;
+            padding: 0.5rem 1rem;
+            text-decoration: none;
+            border-radius: 5px;
+            transition: background 0.2s;
+        }
+        
+        .card a:hover {
+            background: #5a67d8;
+        }
+        
+        .stats {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1rem;
+            margin: 2rem 0;
+        }
+        
+        .stat {
+            text-align: center;
+            padding: 1rem;
+            background: #e2e8f0;
+            border-radius: 8px;
+        }
+        
+        .stat-number {
+            font-size: 2rem;
+            font-weight: bold;
+            color: #667eea;
+        }
+        
+        .stat-label {
+            color: #4a5568;
+            font-size: 0.9rem;
+        }
+        
+        .footer {
+            text-align: center;
+            margin-top: 3rem;
+            padding-top: 2rem;
+            border-top: 1px solid #e2e8f0;
+            color: #4a5568;
+        }
+        
+        .github-link {
+            display: inline-block;
+            background: #24292e;
+            color: white;
+            padding: 0.8rem 1.5rem;
+            text-decoration: none;
+            border-radius: 8px;
+            margin-top: 1rem;
+            transition: background 0.2s;
+        }
+        
+        .github-link:hover {
+            background: #1a1e22;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>Algorithm Study Repository</h1>
+            <p>A comprehensive collection of fundamental algorithms implemented in TypeScript, designed for learning and studying computer science algorithms.</p>
+        </div>
+
+        <div class="content">
+            <div class="stats">
+                <div class="stat">
+                    <div class="stat-number">16</div>
+                    <div class="stat-label">Algorithms</div>
+                </div>
+                <div class="stat">
+                    <div class="stat-number">6</div>
+                    <div class="stat-label">Categories</div>
+                </div>
+                <div class="stat">
+                    <div class="stat-number">3</div>
+                    <div class="stat-label">Runtimes</div>
+                </div>
+                <div class="stat">
+                    <div class="stat-number">100%</div>
+                    <div class="stat-label">TypeScript</div>
+                </div>
+            </div>
+
+            <div class="section">
+                <h2>Documentation</h2>
+                <div class="grid">
+                    <div class="card">
+                        <h3>Getting Started</h3>
+                        <p>Learn how to use this repository for studying algorithms. Includes installation, usage examples, and learning paths.</p>
+                        <a href="GETTING_STARTED.html">Read Guide</a>
+                    </div>
+
+                    <div class="card">
+                        <h3>Algorithm Reference</h3>
+                        <p>Comprehensive documentation of all 16 algorithms with mathematical foundations, complexity analysis, and implementations.</p>
+                        <a href="README.html">View Reference</a>
+                    </div>
+
+                    <div class="card">
+                        <h3>Benchmark Guide</h3>
+                        <p>Learn how to use the benchmarking system to measure and compare algorithm performance across different runtimes.</p>
+                        <a href="BENCHMARK_GUIDE.html">Benchmark Guide</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="section">
+                <h2>Algorithm Categories</h2>
+                <div class="grid">
+                    <div class="card">
+                        <h3>Searching & Sorting</h3>
+                        <p>Binary Search, Quick Sort, Merge Sort, and KMP String Search algorithms with detailed explanations.</p>
+                        <a href="README.html#searching--sorting">View Algorithms</a>
+                    </div>
+
+                    <div class="card">
+                        <h3>Graph Algorithms</h3>
+                        <p>DFS, BFS, Dijkstra, A*, Topological Sort, Kruskal MST, and LCA algorithms for graph processing.</p>
+                        <a href="README.html#graph-algorithms">View Algorithms</a>
+                    </div>
+
+                    <div class="card">
+                        <h3>Mathematical</h3>
+                        <p>GCD, Binary Exponentiation, and FFT algorithms for mathematical computations and optimizations.</p>
+                        <a href="README.html#mathematical">View Algorithms</a>
+                    </div>
+
+                    <div class="card">
+                        <h3>Dynamic Programming</h3>
+                        <p>Knapsack and LCS algorithms demonstrating dynamic programming techniques and optimization.</p>
+                        <a href="README.html#dynamic-programming">View Algorithms</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="section">
+                <h2>Quick Start</h2>
+                <div class="grid">
+                    <div class="card">
+                        <h3>Run Tests</h3>
+                        <p>Verify all algorithms work correctly with the comprehensive test suite.</p>
+                        <code>bun run test</code>
+                    </div>
+
+                    <div class="card">
+                        <h3>View Examples</h3>
+                        <p>See practical examples of how to use each algorithm in real-world scenarios.</p>
+                        <code>bun run examples</code>
+                    </div>
+
+                    <div class="card">
+                        <h3>Run Benchmarks</h3>
+                        <p>Measure algorithm performance and compare across different JavaScript runtimes.</p>
+                        <code>bun run benchmark:compare</code>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="footer">
+            <p>Perfect for students, developers, and algorithm enthusiasts</p>
+            <a href="https://github.com/your-username/algorithms-study-repo" class="github-link">View on GitHub</a>
+        </div>
+    </div>
+</body>
+
+</html>

@@ -1,0 +1,57 @@
+{
+    "name": "algorithms-study-repo",
+    "version": "1.0.0",
+    "description": "A comprehensive collection of fundamental algorithms implemented in TypeScript for learning and studying computer science algorithms",
+    "main": "index.ts",
+    "module": "index.ts",
+    "type": "module",
+    "keywords": [
+        "algorithms",
+        "computer-science",
+        "typescript",
+        "data-structures",
+        "sorting",
+        "searching",
+        "graph-algorithms",
+        "dynamic-programming",
+        "mathematics"
+    ],
+    "author": "David Pere",
+    "license": "MIT",
+    "scripts": {
+        "benchmark": "bun run index.ts",
+        "benchmark:deno": "deno run --allow-read --allow-write --unstable-sloppy-imports index.ts",
+        "benchmark:node": "node --loader ts-node/esm index.ts",
+        "benchmark:cross": "bun run cross-runtime-benchmark.ts",
+        "benchmark:cross:node": "node --loader ts-node/esm cross-runtime-benchmark.ts",
+        "benchmark:compare": "bun run simple-cross-benchmark.ts",
+        "test": "bun run test.ts",
+        "test:deno": "deno run test.ts",
+        "test:node": "node --loader ts-node/esm test.ts",
+        "examples": "bun run examples.ts",
+        "examples:deno": "deno run examples.ts",
+        "examples:node": "node --loader ts-node/esm examples.ts",
+        "build": "tsc",
+        "build:docs": "node build-docs.js",
+        "type-check": "tsc --noEmit",
+        "start": "bun run index.ts",
+        "benchmark:full": "bun run index.ts && echo 'Check the generated CSV and JSON files for detailed results'"
+    },
+    "devDependencies": {
+        "@types/bun": "latest",
+        "@types/node": "^20.0.0",
+        "typescript": "^5.0.0",
+        "tsx": "^4.0.0"
+    },
+    "engines": {
+        "node": ">=18.0.0"
+    },
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/your-username/algorithms-study-repo.git"
+    },
+    "bugs": {
+        "url": "https://github.com/your-username/algorithms-study-repo/issues"
+    },
+    "homepage": "https://github.com/your-username/algorithms-study-repo#readme"
+}
